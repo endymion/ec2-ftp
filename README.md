@@ -10,10 +10,12 @@ from OpenTable.
 The goal was to get [vsftp](http://vsftpd.beasts.org/) running in the cloud.  Modern
 system administrators don't set up things like that by hand, they use DevOps.  The
 cloud server should be the product of code, not a human's manual labor.  To accomplish
-that, I used [Vagrant](https://www.vagrantup.com/) to create an
+that, I used [Vagrant](https://www.vagrantup.com/) with the [vagrant-aws](https://github.com/mitchellh/vagrant-aws) plugin to create an
 [Ubuntu 12.04](http://releases.ubuntu.com/12.04/) cloud instance at
-[Amazon EC2](http://aws.amazon.com/ec2/).  I used [Chef](http://www.getchef.com/chef/)
-to provision the instance with vsftp, to configure it, and to create the FTP user(s).
+[Amazon EC2](http://aws.amazon.com/ec2/).  I used the [vagrant-omnibus](https://github.com/schisamo/vagrant-omnibus) plugin to install [Chef](http://www.getchef.com/chef/),
+and then I used Chef to provision the instance with vsftp, to configure it, and to
+create the FTP user(s).  The whole thing is fully automated from the ```vagrant up```
+command.
 
 I used the new bursting
 [T2.micro](http://aws.amazon.com/about-aws/whats-new/2014/07/01/introducing-t2-the-new-low-cost-general-purpose-instance-type-for-amazon-ec2/)
