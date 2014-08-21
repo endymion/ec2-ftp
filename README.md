@@ -5,6 +5,16 @@ ftp.vault.venuedriver.com.  This FTP server is for accepting data files from som
 data sources.  The first use case for this server was to accept periodic data dumps
 from OpenTable.
 
+## Technology
+
+The goal was to get [vsftp](http://vsftpd.beasts.org/) running in the cloud.  Modern
+system administrators don't set up things like that by hand, they use DevOps.  The
+cloud server should be the product of code, not a human's manual labor.  To accomplish
+that, I used [Vagrant](https://www.vagrantup.com/) to create an
+[Ubuntu 12.04](http://releases.ubuntu.com/12.04/) cloud instance at
+[Amazon EC2](http://aws.amazon.com/ec2/).  I used [Chef](http://www.getchef.com/chef/)
+to provision the instance with vsftp, to configure it, and to create the FTP user(s).
+
 ## Authentication
 
 To spin up an EC2 machine you'll need a key and secret for accessing your AWS account.
