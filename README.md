@@ -15,6 +15,11 @@ that, I used [Vagrant](https://www.vagrantup.com/) to create an
 [Amazon EC2](http://aws.amazon.com/ec2/).  I used [Chef](http://www.getchef.com/chef/)
 to provision the instance with vsftp, to configure it, and to create the FTP user(s).
 
+I used the new bursting
+[T2.micro](http://aws.amazon.com/about-aws/whats-new/2014/07/01/introducing-t2-the-new-low-cost-general-purpose-instance-type-for-amazon-ec2/)
+instance type that only costs $9.50 per month.  Plenty of power for an FTP site that only
+handles a few transfers per day.
+
 ## Authentication
 
 To spin up an EC2 machine you'll need a key and secret for accessing your AWS account.
