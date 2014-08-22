@@ -1,9 +1,7 @@
-# Vault FTP Server
+# FTP Server on Amazon EC2
 
-This project contains the code for setting up an FTP server at Amazon AWS to power
-ftp.vault.venuedriver.com.  This FTP server is for accepting data files from some
-data sources.  The first use case for this server was to accept periodic data dumps
-from OpenTable.
+This project contains the code for setting up an FTP server at Amazon AWS as an EC2
+instance.
 
 ## Technology
 
@@ -32,11 +30,11 @@ by setting two environment variables:
     export AWS_SECRET="[YOUR SECRET]”
 
 To access the EC2 machine you'll need an [EC2 key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html).  If you have a key pair in a file
-called ```vault-ftp.pem``` in the root of this project, then you can configure that
+called ```ec2-ftp.pem``` in the root of this project, then you can configure that
 by setting two environment variables, like this:
 
-    export AWS_KEYPAIR_NAME="vault-ftp”
-    export AWS_KEYPAIR_PATH="vault-ftp.pem"
+    export AWS_KEYPAIR_NAME="ec2-ftp”
+    export AWS_KEYPAIR_PATH="ec2-ftp.pem"
 
 ## Users
 
@@ -85,7 +83,7 @@ for:
 * Install the Vagrant-Omnibus plugin for Vagrant: ```vagrant plugin install vagrant-omnibus```
 * Clone the project to your development system by opening a terminal and switching to the
 folder on your machine where you want the code (suggestion: ```cd ~/projects```) and enter
-this command: ```git clone git@github.com:VenueDriver/vault-ftp.git```.  If you can
-```cd vault-ftp``` then it worked.
+this command: ```git clone git@github.com:VenueDriver/ec2-ftp.git```.  If you can
+```cd ec2-ftp``` then it worked.
 * Spin up your Vagrant virtual machine in AWS with ```vagrant up --provision=aws```.  Vagrant will automatically use the specified AMI to create a new cloud instance, and then
 provision (configure) the instance using Chef.
