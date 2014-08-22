@@ -1,9 +1,7 @@
-# Vault FTP Server
+# FTP Server on Amazon EC2
 
-This project contains the code for setting up an FTP server at Amazon AWS to power
-ftp.vault.venuedriver.com.  This FTP server is for accepting data files from some
-data sources.  The first use case for this server was to accept periodic data dumps
-from OpenTable.
+This project contains the code for setting up an FTP server at Amazon AWS as an EC2
+instance.
 
 ## Technology
 
